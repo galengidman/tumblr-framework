@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head>
+	<meta charset="UTF-8">
+	
+	<!-- force latest IE rendering engin & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<!-- tumblog title and post title on permalink pages -->
+	<title>{Title}{block:PostTitle} // {PostTitle}{/block:PostTitle}</title>
+	
+	<!-- favicon only for now - Tumblr doesn't support apple-touch-icon -->
+	<link rel="shortcut icon" href="{Favicon}">
+	
+	<!-- RSS link - make sure not to use /rss as it kills the ability for a user to use Feedburner -->
+	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+	
+	<!-- insert the met -->
+	{block:Description}
+		<meta name="description" content="{MetaDescription}">
+	{/block:Description}
+	
+	<!-- theme options -->
+	<meta name="text:Disqus shortname" content="">
+	<meta name="text:Google Analytics ID" content="">
+	
+	<!-- styles -->
+	<style>
+		/* reset and normalize styles */
+		@import url('http://static.tumblr.com/vookvsa/QT0ly45ee/normalize.css');
+		
+		/* don't forget to let people mess up the theme with their own styles */
+		{CustomCSS}
+	</style>
+	
+	<!-- HTML5 enabling script -->
+	<!--[if lt IE 9]>
+		<script src="http://static.tumblr.com/vookvsa/elOly45v5/html5.js"></script>
+	<![endif]-->
+	
+	<!-- all the JS is at the bottom of the page except for Modernizr -->
+	<script src="http://static.tumblr.com/vookvsa/PRBly45fo/modernizr-1.7.min.js"></script>
+</head>
+
+<body>
+
+	<header role="banner">
+
+		<nav role="navigation">
+			<ul>
+				{block:HasPages}
+					{block:Pages}
+						<li><a href="{URL}">{Label}</a></li>
+					{/block:Pages}
+				{/block:HasPages}
+				<li><a href="/archive">{lang:Archive}</a></li>
+				{block:AskEnabled}
+					<li><a href="/ask">{AskLabel}</a></li>
+				{/block:AskEnabled}
+				{block:SubmissionsEnabled}
+					<li><a href="/submit">{SubmitLabel}</a></li>
+				{/block:SubmissionsEnabled}
+			</ul>
+		</nav>
+
+		<h1 title="{Title}"><a href="/">{Title}</a></h1>
+
+		{block:Description}
+			<p class="description">{Description}</p>
+		{/block:Description}
+
+		{block:DayPage}
+			<h2>{lang:Posted on DayOfMonth Month Year}</h2>
+		{/block:DayPage}
+		
+		{block:TagPage}
+			<h2>{lang:Posts tagged Tag 2}</h2>
+		{/block:TagPage}
+
+	</header><!-- /header -->
+	
+	<div role="main">
+		{block:Posts}
+			
+			{block:Text}
+				<article id="post-{PostID}" class="post text {TagsAsClasses}">
+					{block:Title}
+						<header>
+							<h1><a href="{Permalink}">{Title}</a></h1>
+						</header>
+					{/block:Title}
+					{Body}
+					{block:ContentSource}
+						<p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
+					{/block:ContentSource}
+					{block:RebloggedFrom}
+						<p>{lang:Originally from ReblogRootTitle 2}</p>
+					{/block:RebloggedFrom}
+					<footer>
+						<span class="time-ago">
+							{TimeAgo}
+						</span>
+						{block:IfDisqusShortname}
+							<span class="comments-link">
+								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							</span>
+						{/block:IfDisqusShortname}
+						{block:NoteCount}
+							<span class="note-count">
+								{NoteCountWithLabel}
+							</span>
+						{/block:NoteCount}
+						{block:HasTags}
+							<span class="tags">
+								{lang:Tagged}
+								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
+							</span>
+						{/block:HasTags}
+					</footer>
+				</article>
+			{/block:Text}
+
+			{block:Answer}
+				<article id="post-{PostID}" class="post answer {TagsAsClasses}">
+					<h2>{lang:Asker asked}</h2>
+					<blockquote>{Question}</blockquote>
+					{Answer}
+					<footer>
+						<span class="time-ago">
+							{TimeAgo}
+						</span>
+						{block:IfDisqusShortname}
+							<span class="comments-link">
+								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							</span>
+						{/block:IfDisqusShortname}
+						{block:NoteCount}
+							<span class="note-count">
+								{NoteCountWithLabel}
+							</span>
+						{/block:NoteCount}
+						{block:HasTags}
+							<span class="tags">
+								{lang:Tagged}
+								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
+							</span>
+						{/block:HasTags}
+					</footer>
+				</article>
+			{/block:Answer}
+			
+			{block:Photo}
+				<article id="post-{PostID}" class="post photo {TagsAsClasses}">
+					{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}">{/LinkCloseTag}
+					{block:HighRes}
+						<p><a href="{PhotoURL-HighRes}">View in high-resolution</a></p>
+					{/block:HighRes}
+					{block:Exif}
+						<ul>
+							{block:Camera}
+								<li>Camera: {Camera}</li>
+							{/block:Camera}
+							{block:Aperture}
+								<li>Aperture: {Aperture}</li>
+							{/block:Aperture}
+							{block:Exposure}
+								<li>Exposure: {Exposure}</li>
+							{/block:Exposure}
+							{block:FocalLength}
+								<li>Focal Length: {FocalLength}</li>
+							{/block:FocalLength}
+						</ul>
+					{/block:Exif}
+					{block:Caption}
+						{Caption}
+					{/block:Caption}
+					{block:ContentSource}
+						{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a>
+					{/block:ContentSource}
+					{block:RebloggedFrom}
+						<p>{lang:Originally from ReblogRootTitle 2}</p>
+					{/block:RebloggedFrom}
+					<footer>
+						<span class="time-ago">
+							{TimeAgo}
+						</span>
+						{block:IfDisqusShortname}
+							<span class="comments-link">
+								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							</span>
+						{/block:IfDisqusShortname}
+						{block:NoteCount}
+							<span class="note-count">
+								{NoteCountWithLabel}
+							</span>
+						{/block:NoteCount}
+						{block:HasTags}
+							<span class="tags">
+								{lang:Tagged}
+								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
+							</span>
+						{/block:HasTags}
+					</footer>
+				</article>
+			{/block:Photo}
+			
+			{block:Photoset}
+				<article id="post-{PostID}" class="post photoset {TagsAsClasses}">
+					{Photoset-500}
+					{block:Caption}
+						{Caption}
+					{/block:Caption}
+					{block:ContentSource}
+						{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a>
+					{/block:ContentSource}
+					{block:RebloggedFrom}
+						<p>{lang:Originally from ReblogRootTitle 2}</p>
+					{/block:RebloggedFrom}
+					<footer>
+						<span class="time-ago">
+							{TimeAgo}
+						</span>
+						{block:IfDisqusShortname}
+							<span class="comments-link">
+								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							</span>
+						{/block:IfDisqusShortname}
+						{block:NoteCount}
+							<span class="note-count">
+								{NoteCountWithLabel}
+							</span>
+						{/block:NoteCount}
+						{block:HasTags}
+							<span class="tags">
+								{lang:Tagged}
+								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
+							</span>
+						{/block:HasTags}
+					</footer>
+				</article>
+			{/block:Photoset}
+
+			{block:Video}
+				<article id="post-{PostID}" class="post video {TagsAsClasses}">
+					{Video-500}
+					{block:Caption}
+						{Caption}
+					{/block:Caption}
+					{block:ContentSource}
+						{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a>
+					{/block:ContentSource}
+					{block:RebloggedFrom}
+						<p>{lang:Originally from ReblogRootTitle 2}</p>
+					{/block:RebloggedFrom}
+					<footer>
+						<span class="time-ago">
+							{TimeAgo}
+						</span>
+						{block:IfDisqusShortname}
+							<span class="comments-link">
+								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							</span>
+						{/block:IfDisqusShortname}
+						{block:NoteCount}
+							<span class="note-count">
+								{NoteCountWithLabel}
+							</span>
+						{/block:NoteCount}
+						{block:HasTags}
+							<span class="tags">
+								{lang:Tagged}
+								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
+							</span>
+						{/block:HasTags}
+					</footer>
+				</article>
+			{/block:Video}
+
+			{block:Audio}
+				<article id="post-{PostID}" class="post audio {TagsAsClasses}">
+					{AudioPlayer}
+					{block:Caption}
+						{Caption}
+					{/block:Caption}
+					<ul>
+						{block:ExternalAudio}
+							<li>{PlayCountWithLabel}</li>
+						{/block:ExternalAudio}
+						<li>{PlayCount}</li>
+						{block:Artist}
+							<li>Artist &mdash; {Artist}</li>
+						{/block:Artist}
+						{block:Album}
+							<li>Album &mdash; {Album}</li>
+						{/block:Album}
+						{block:TrackName}
+							<li>Track &mdash; {TrackName}</li>
+						{/block:TrackName}
+					</ul>
+					{block:ContentSource}
+						{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a>
+					{/block:ContentSource}
+					{block:RebloggedFrom}
+						<p>{lang:Originally from ReblogRootTitle 2}</p>
+					{/block:RebloggedFrom}
+					<footer>
+						<span class="time-ago">
+							{TimeAgo}
+						</span>
+						{block:IfDisqusShortname}
+							<span class="comments-link">
+								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							</span>
+						{/block:IfDisqusShortname}
+						{block:NoteCount}
+							<span class="note-count">
+								{NoteCountWithLabel}
+							</span>
+						{/block:NoteCount}
+						{block:HasTags}
+							<span class="tags">
+								{lang:Tagged}
+								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
+							</span>
+						{/block:HasTags}
+					</footer>
+				</article>
+			{/block:Audio}
+
+			{block:Quote}
+				<article id="post-{PostID}" class="post quote {TagsAsClasses}">
+					<blockquote>{Quote}</blockquote>
+					{block:Source}
+						{Source}
+					{/block:Source}
+					{block:ContentSource}
+						{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a>
+					{/block:ContentSource}
+					{block:RebloggedFrom}
+						<p>{lang:Originally from ReblogRootTitle 2}</p>
+					{/block:RebloggedFrom}
+					<footer>
+						<span class="time-ago">
+							{TimeAgo}
+						</span>
+						{block:IfDisqusShortname}
+							<span class="comments-link">
+								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							</span>
+						{/block:IfDisqusShortname}
+						{block:NoteCount}
+							<span class="note-count">
+								{NoteCountWithLabel}
+							</span>
+						{/block:NoteCount}
+						{block:HasTags}
+							<span class="tags">
+								{lang:Tagged}
+								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
+							</span>
+						{/block:HasTags}
+					</footer>
+				</article>
+			{/block:Quote}
+			
+			{block:Link}
+				<article id="post-{PostID}" class="post link {TagsAsClasses}">
+					{block:Title}
+						<header>
+							<h1><a href="{Permalink}">{Name}</a></h1>
+						</header>
+					{/block:Title}
+					{block:Description}
+						{Description}
+					{/block:Description}
+					{block:ContentSource}
+						{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a>
+					{/block:ContentSource}
+					{block:RebloggedFrom}
+						<p>{lang:Originally from ReblogRootTitle 2}</p>
+					{/block:RebloggedFrom}
+					<footer>
+						<span class="time-ago">
+							{TimeAgo}
+						</span>
+						{block:IfDisqusShortname}
+							<span class="comments-link">
+								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							</span>
+						{/block:IfDisqusShortname}
+						{block:NoteCount}
+							<span class="note-count">
+								{NoteCountWithLabel}
+							</span>
+						{/block:NoteCount}
+						{block:HasTags}
+							<span class="tags">
+								{lang:Tagged}
+								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
+							</span>
+						{/block:HasTags}
+					</footer>
+				</article>
+			{/block:Link}
+			
+			{block:Chat}
+				<article id="post-{PostID}" class="post chat {TagsAsClasses}">
+					{block:Title}
+						<h1><a href="{Permalink}">{Title}</a></h1>
+					{/block:Title}
+					<ul>
+						{block:Lines}
+							<li class="{Alt} user-{UserNumber}">
+								{block:Label}
+									<span>{Label}</span>
+								{/block:Label}
+								{Line}
+							</li>
+						{/block:Lines}
+					</ul>
+					{block:ContentSource}
+						{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a>
+					{/block:ContentSource}
+					{block:RebloggedFrom}
+						<p>{lang:Originally from ReblogRootTitle 2}</p>
+					{/block:RebloggedFrom}
+					<footer>
+						<span class="time-ago">
+							{TimeAgo}
+						</span>
+						{block:IfDisqusShortname}
+							<span class="comments-link">
+								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							</span>
+						{/block:IfDisqusShortname}
+						{block:NoteCount}
+							<span class="note-count">
+								{NoteCountWithLabel}
+							</span>
+						{/block:NoteCount}
+						{block:HasTags}
+							<span class="tags">
+								{lang:Tagged}
+								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
+							</span>
+						{/block:HasTags}
+					</footer>
+				</article>
+			{/block:Chat}
+					
+		{/block:Posts}
+		
+		{block:IfDisqusShortname}
+			<script>var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
+			{block:Permalink}
+				<div id="disqus_thread"></div>
+				<script>
+					(function() {
+						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = 'http://{text:Disqus shortname}.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus shortname}">comments powered by Disqus.</a></noscript>
+			{/block:Permalink}
+			<script>
+				var disqus_shortname = '{text:Disqus shortname}';
+				(function() {
+					var s = document.createElement('script'); s.async = true;
+					s.src = 'http://{text:Disqus shortname}.disqus.com/count.js';
+					(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+				}());
+			</script>
+		{/block:IfDisqusShortname}
+		
+		{block:Pagination}
+			<nav id="pagination">
+				{block:PreviousPage}<a href="{PreviousPage}">Previous</a> // {/block:PreviousPage}
+				{block:NextPage}<a href="{NextPage}">Next</a>{/block:NextPage}
+			</nav>
+		{/block:Pagination}
+
+		{block:PostNotes}
+			<section id="notes">{PostNotes}</section>
+		{/block:PostNotes}
+			
+	</div><!-- /main -->
+	
+	<footer role="contentinfo">
+		Copyright {CopyrightYears} // {lang:Powered by Tumblr 2}
+	</footer><!-- /footer -->
+	
+	<!-- grab jQuery -->
+	<script src="http://static.tumblr.com/vookvsa/cJ1ly45i3/jquery-1.7.1.min.js"></script>
+	
+	<!-- any custom scripts go here -->
+	<script>
+		$(document).ready(function() {
+			// your functions go here
+		});
+	</script>
+
+	{block:IfGoogleAnalyticsID}
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', '{text:Google Analytics ID}']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+	{/block:IfGoogleAnalyticsID}
+
+</body>
+</html>

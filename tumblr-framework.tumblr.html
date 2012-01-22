@@ -52,6 +52,8 @@
 
 	<header role="banner">
 
+		<h1 title="{Title}"><a href="/">{Title}</a></h1>
+
 		<nav role="navigation">
 			<ul>
 				{block:HasPages}
@@ -68,8 +70,6 @@
 				{/block:SubmissionsEnabled}
 			</ul>
 		</nav>
-
-		<h1 title="{Title}"><a href="/">{Title}</a></h1>
 
 		{block:Description}
 			<p class="description">{Description}</p>
@@ -97,7 +97,7 @@
 					{/block:Title}
 					{Body}
 					{block:ContentSource}
-						<p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
+						<p><p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
 						<p>{lang:Originally from ReblogRootTitle 2}</p>
@@ -158,6 +158,9 @@
 			{block:Photo}
 				<article id="post-{PostID}" class="post photo {TagsAsClasses}">
 					{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}">{/LinkCloseTag}
+					{block:Caption}
+						{Caption}
+					{/block:Caption}
 					{block:HighRes}
 						<p><a href="{PhotoURL-HighRes}">View in high-resolution</a></p>
 					{/block:HighRes}
@@ -177,11 +180,8 @@
 							{/block:FocalLength}
 						</ul>
 					{/block:Exif}
-					{block:Caption}
-						{Caption}
-					{/block:Caption}
 					{block:ContentSource}
-						{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a>
+						<p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
 						<p>{lang:Originally from ReblogRootTitle 2}</p>
@@ -217,7 +217,7 @@
 						{Caption}
 					{/block:Caption}
 					{block:ContentSource}
-						{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a>
+						<p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
 						<p>{lang:Originally from ReblogRootTitle 2}</p>
@@ -253,7 +253,7 @@
 						{Caption}
 					{/block:Caption}
 					{block:ContentSource}
-						{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a>
+						<p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
 						<p>{lang:Originally from ReblogRootTitle 2}</p>
@@ -290,21 +290,23 @@
 					{/block:Caption}
 					<ul>
 						{block:ExternalAudio}
-							<li>{PlayCountWithLabel}</li>
+							<li>
+								<a href="{ExternalAudioURL}">{lang:Download}</a>
+							</li>
 						{/block:ExternalAudio}
-						<li>{PlayCount}</li>
+						<li>{PlayCountWithLabel}</li>
 						{block:Artist}
-							<li>Artist &mdash; {Artist}</li>
+							<li>Artist: {Artist}</li>
 						{/block:Artist}
 						{block:Album}
-							<li>Album &mdash; {Album}</li>
+							<li>Album: {Album}</li>
 						{/block:Album}
 						{block:TrackName}
-							<li>Track &mdash; {TrackName}</li>
+							<li>Track: {TrackName}</li>
 						{/block:TrackName}
 					</ul>
 					{block:ContentSource}
-						{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a>
+						<p><p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
 						<p>{lang:Originally from ReblogRootTitle 2}</p>
@@ -337,10 +339,10 @@
 				<article id="post-{PostID}" class="post quote {TagsAsClasses}">
 					<blockquote>{Quote}</blockquote>
 					{block:Source}
-						{Source}
+						<p>{Source}</p>
 					{/block:Source}
 					{block:ContentSource}
-						{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a>
+						<p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
 						<p>{lang:Originally from ReblogRootTitle 2}</p>
@@ -380,7 +382,7 @@
 						{Description}
 					{/block:Description}
 					{block:ContentSource}
-						{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a>
+						<p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
 						<p>{lang:Originally from ReblogRootTitle 2}</p>
@@ -414,7 +416,7 @@
 					{block:Title}
 						<h1><a href="{Permalink}">{Title}</a></h1>
 					{/block:Title}
-					<ul>
+					<ul class="chat-list">
 						{block:Lines}
 							<li class="{Alt} user-{UserNumber}">
 								{block:Label}
@@ -425,7 +427,7 @@
 						{/block:Lines}
 					</ul>
 					{block:ContentSource}
-						{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a>
+						<p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
 						<p>{lang:Originally from ReblogRootTitle 2}</p>

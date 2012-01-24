@@ -75,14 +75,6 @@
 			<p class="description">{Description}</p>
 		{/block:Description}
 
-		{block:DayPage}
-			<h2>{lang:Posted on DayOfMonth Month Year}</h2>
-		{/block:DayPage}
-		
-		{block:TagPage}
-			<h2>{lang:Posts tagged Tag 2}</h2>
-		{/block:TagPage}
-
 	</header><!-- /header -->
 	
 	<div role="main">
@@ -104,20 +96,20 @@
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
-							{TimeAgo}
+							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link">
-								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							<span class="comments-link"> // 
+								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count">
-								{NoteCountWithLabel}
+							<span class="note-count"> // 
+								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags">
+							<span class="tags"> // 
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -133,20 +125,20 @@
 					{Answer}
 					<footer>
 						<span class="time-ago">
-							{TimeAgo}
+							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link">
-								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							<span class="comments-link"> // 
+								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count">
-								{NoteCountWithLabel}
+							<span class="note-count"> // 
+								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags">
+							<span class="tags"> // 
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -188,20 +180,20 @@
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
-							{TimeAgo}
+							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link">
-								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							<span class="comments-link"> // 
+								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count">
-								{NoteCountWithLabel}
+							<span class="note-count"> // 
+								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags">
+							<span class="tags"> // 
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -224,20 +216,20 @@
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
-							{TimeAgo}
+							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link">
-								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							<span class="comments-link"> // 
+								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count">
-								{NoteCountWithLabel}
+							<span class="note-count"> // 
+								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags">
+							<span class="tags"> // 
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -260,20 +252,20 @@
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
-							{TimeAgo}
+							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link">
-								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							<span class="comments-link"> // 
+								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count">
-								{NoteCountWithLabel}
+							<span class="note-count"> // 
+								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags">
+							<span class="tags"> // 
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -313,20 +305,20 @@
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
-							{TimeAgo}
+							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link">
-								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							<span class="comments-link"> // 
+								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count">
-								{NoteCountWithLabel}
+							<span class="note-count"> // 
+								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags">
+							<span class="tags"> // 
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -349,20 +341,20 @@
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
-							{TimeAgo}
+							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link">
-								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							<span class="comments-link"> // 
+								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count">
-								{NoteCountWithLabel}
+							<span class="note-count"> // 
+								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags">
+							<span class="tags"> // 
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -389,20 +381,20 @@
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
-							{TimeAgo}
+							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link">
-								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							<span class="comments-link"> // 
+								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count">
-								{NoteCountWithLabel}
+							<span class="note-count"> // 
+								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags">
+							<span class="tags"> // 
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -434,20 +426,20 @@
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
-							{TimeAgo}
+							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link">
-								<a href="{Permalink}#disqus_thread">{lang:Comment}</a>
+							<span class="comments-link"> // 
+								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count">
-								{NoteCountWithLabel}
+							<span class="note-count"> // 
+								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags">
+							<span class="tags"> // 
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -460,26 +452,28 @@
 		
 		{block:IfDisqusShortname}
 			{block:PermalinkPage}
-				<script>var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
-				{block:Permalink}
-					<div id="disqus_thread"></div>
+				<section id="comments">
+					<script>var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
+					{block:Permalink}
+						<div id="disqus_thread"></div>
+						<script>
+							(function() {
+								var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+								dsq.src = 'http://{text:Disqus shortname}.disqus.com/embed.js';
+								(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+							})();
+						</script>
+						<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus shortname}">comments powered by Disqus.</a></noscript>
+					{/block:Permalink}
 					<script>
+						var disqus_shortname = '{text:Disqus shortname}';
 						(function() {
-							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-							dsq.src = 'http://{text:Disqus shortname}.disqus.com/embed.js';
-							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-						})();
+							var s = document.createElement('script'); s.async = true;
+							s.src = 'http://{text:Disqus shortname}.disqus.com/count.js';
+							(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+						}());
 					</script>
-					<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus shortname}">comments powered by Disqus.</a></noscript>
-				{/block:Permalink}
-				<script>
-					var disqus_shortname = '{text:Disqus shortname}';
-					(function() {
-						var s = document.createElement('script'); s.async = true;
-						s.src = 'http://{text:Disqus shortname}.disqus.com/count.js';
-						(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-					}());
-				</script>
+				</section>
 			{/block:PermalinkPage}
 		{/block:IfDisqusShortname}
 		

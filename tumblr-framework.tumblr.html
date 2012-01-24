@@ -481,16 +481,16 @@
 			</script>
 		{/block:IfDisqusShortname}
 		
+		{block:PostNotes}
+			<section id="notes">{PostNotes}</section>
+		{/block:PostNotes}
+
 		{block:Pagination}
 			<nav id="pagination">
 				{block:PreviousPage}<a href="{PreviousPage}">Previous</a> // {/block:PreviousPage}
 				{block:NextPage}<a href="{NextPage}">Next</a>{/block:NextPage}
 			</nav>
 		{/block:Pagination}
-
-		{block:PostNotes}
-			<section id="notes">{PostNotes}</section>
-		{/block:PostNotes}
 			
 	</div><!-- /main -->
 	

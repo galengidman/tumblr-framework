@@ -365,11 +365,9 @@
 			
 			{block:Link}
 				<article id="post-{PostID}" class="post link {TagsAsClasses}">
-					{block:Title}
-						<header>
-							<h1><a href="{Permalink}">{Name}</a></h1>
-						</header>
-					{/block:Title}
+					<header>
+						<h1><a href="{Permalink}">{URL}</a></h1>
+					</header>
 					{block:Description}
 						{Description}
 					{/block:Description}

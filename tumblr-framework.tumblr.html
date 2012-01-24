@@ -459,26 +459,28 @@
 		{/block:Posts}
 		
 		{block:IfDisqusShortname}
-			<script>var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
-			{block:Permalink}
-				<div id="disqus_thread"></div>
+			{block:PermalinkPage}
+				<script>var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
+				{block:Permalink}
+					<div id="disqus_thread"></div>
+					<script>
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = 'http://{text:Disqus shortname}.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus shortname}">comments powered by Disqus.</a></noscript>
+				{/block:Permalink}
 				<script>
+					var disqus_shortname = '{text:Disqus shortname}';
 					(function() {
-						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-						dsq.src = 'http://{text:Disqus shortname}.disqus.com/embed.js';
-						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-					})();
+						var s = document.createElement('script'); s.async = true;
+						s.src = 'http://{text:Disqus shortname}.disqus.com/count.js';
+						(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+					}());
 				</script>
-				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus shortname}">comments powered by Disqus.</a></noscript>
-			{/block:Permalink}
-			<script>
-				var disqus_shortname = '{text:Disqus shortname}';
-				(function() {
-					var s = document.createElement('script'); s.async = true;
-					s.src = 'http://{text:Disqus shortname}.disqus.com/count.js';
-					(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-				}());
-			</script>
+			{/block:PermalinkPage}
 		{/block:IfDisqusShortname}
 		
 		{block:PostNotes}

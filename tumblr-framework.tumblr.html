@@ -15,8 +15,9 @@
 	<!-- tumblog title and post title on permalink pages -->
 	<title>{Title}{block:PostTitle} // {PostTitle}{/block:PostTitle}</title>
 	
-	<!-- favicon only for now - Tumblr doesn't support apple-touch-icon -->
+	<!-- favicon & apple touch icon -->
 	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="apple-touch-icon" href="{PortraitURL-128}">
 	
 	<!-- RSS link - make sure not to use /rss as it kills the ability for a user to use Feedburner -->
 	<link rel="alternate" type="application/rss+xml" href="{RSS}">

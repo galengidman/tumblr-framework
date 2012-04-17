@@ -16,6 +16,15 @@ This is a framework to get your Tumblr themes started. It's not everything, but 
 
 MIT dude.
 
+## Themes built on Tumblr Framework
+
+- [asSimple](https://github.com/lain6/asSimple)
+- [Pinstripe](http://www.tumblr.com/theme/33911)
+- [Blueprint](http://www.tumblr.com/theme/33946)
+- [Awesomr](http://www.tumblr.com/theme/33891)
+- [Concrete Lunch](http://www.tumblr.com/theme/33778)
+- [Philosophy](http://www.tumblr.com/theme/33682)
+
 ## Questions or comments
 
 [Shoot me an email](mailto:galen@galengidman.com) or [tweet](http://twitter.com/galengidman) me.

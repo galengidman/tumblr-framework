@@ -25,6 +25,9 @@
 	<!-- theme options -->
 	<meta name="text:Disqus shortname" content="">
 	<meta name="text:Google Analytics ID" content="">
+	<meta name="if:Show RSS link" content="1">
+	<meta name="if:Show archive link" content="1">
+	<meta name="if:Show random link" content="1">
 
 	<!-- styles -->
 	<style>
@@ -52,12 +55,20 @@
 						<li><a href="{URL}">{Label}</a></li>
 					{/block:Pages}
 				{/block:HasPages}
-				<li><a href="/archive">{lang:Archive}</a></li>
+				{block:IfShowRssLink}
+					<li class="rss"><a href="{RSS}">RSS</a></li>
+				{/block:IfShowRssLink}
+				{block:IfShowRandomLink}
+					<li class="random"><a href="/random">{lang:Random}</a></li>
+				{/block:IfShowRandomLink}
+				{block:IfShowArchiveLink}
+					<li class="archive"><a href="/archive">{lang:Archive}</a></li>
+				{/block:IfShowArchiveLink}
 				{block:AskEnabled}
-					<li><a href="/ask">{AskLabel}</a></li>
+					<li class="ask"><a href="/ask">{AskLabel}</a></li>
 				{/block:AskEnabled}
 				{block:SubmissionsEnabled}
-					<li><a href="/submit">{SubmitLabel}</a></li>
+					<li class="submit"><a href="/submit">{SubmitLabel}</a></li>
 				{/block:SubmissionsEnabled}
 			</ul>
 		</nav>

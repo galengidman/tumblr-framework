@@ -48,6 +48,10 @@
 
 		<h1 title="{Title}"><a href="/">{Title}</a></h1>
 
+		{block:Description}
+			<p class="description">{Description}</p>
+		{/block:Description}
+
 		<nav role="navigation">
 			<ul>
 				{block:HasPages}
@@ -73,10 +77,6 @@
 			</ul>
 		</nav>
 
-		{block:Description}
-			<p class="description">{Description}</p>
-		{/block:Description}
-
 	</header><!-- /header -->
 
 	<div role="main">
@@ -91,10 +91,10 @@
 					{/block:Title}
 					{Body}
 					{block:ContentSource}
-						<p><p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p></p>
+						<p class="content-source">{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
-						<p>{lang:Originally from ReblogRootTitle 2}</p>
+						<p class="reblogged-from">{lang:Originally from ReblogRootTitle 2}</p>
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
@@ -156,29 +156,29 @@
 						{Caption}
 					{/block:Caption}
 					{block:HighRes}
-						<p><a href="{PhotoURL-HighRes}">View in high-resolution</a></p>
+						<p><a href="{PhotoURL-HighRes}">{lang:View high resolution}</a></p>
 					{/block:HighRes}
 					{block:Exif}
 						<ul>
 							{block:Camera}
-								<li>Camera: {Camera}</li>
+								<li class="camera">{Camera}</li>
 							{/block:Camera}
 							{block:Aperture}
-								<li>Aperture: {Aperture}</li>
+								<li class="aperture">{Aperture}</li>
 							{/block:Aperture}
 							{block:Exposure}
-								<li>Exposure: {Exposure}</li>
+								<li class="exposure">{Exposure}</li>
 							{/block:Exposure}
 							{block:FocalLength}
-								<li>Focal Length: {FocalLength}</li>
+								<li class="focal-length">{FocalLength}</li>
 							{/block:FocalLength}
 						</ul>
 					{/block:Exif}
 					{block:ContentSource}
-						<p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
+						<p class="content-source">{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
-						<p>{lang:Originally from ReblogRootTitle 2}</p>
+						<p class="reblogged-from">{lang:Originally from ReblogRootTitle 2}</p>
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
@@ -211,10 +211,10 @@
 						{Caption}
 					{/block:Caption}
 					{block:ContentSource}
-						<p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
+						<p class="content-source">{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
-						<p>{lang:Originally from ReblogRootTitle 2}</p>
+						<p class="reblogged-from">{lang:Originally from ReblogRootTitle 2}</p>
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
@@ -247,10 +247,10 @@
 						{Caption}
 					{/block:Caption}
 					{block:ContentSource}
-						<p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
+						<p class="content-source">{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
-						<p>{lang:Originally from ReblogRootTitle 2}</p>
+						<p class="reblogged-from">{lang:Originally from ReblogRootTitle 2}</p>
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
@@ -289,26 +289,26 @@
 					{/block:Caption}
 					<ul>
 						{block:ExternalAudio}
-							<li>
+							<li class="external-audio">
 								<a href="{ExternalAudioURL}">{lang:Download}</a>
 							</li>
 						{/block:ExternalAudio}
-						<li>{PlayCountWithLabel}</li>
+						<li class="play-count">{PlayCountWithLabel}</li>
 						{block:Artist}
-							<li>Artist: {Artist}</li>
+							<li class="artist">{Artist}</li>
 						{/block:Artist}
 						{block:Album}
-							<li>Album: {Album}</li>
+							<li class="album">{Album}</li>
 						{/block:Album}
 						{block:TrackName}
-							<li>Track: {TrackName}</li>
+							<li class="track">{TrackName}</li>
 						{/block:TrackName}
 					</ul>
 					{block:ContentSource}
-						<p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
+						<p class="content-source">{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
-						<p>{lang:Originally from ReblogRootTitle 2}</p>
+						<p class="reblogged-from">{lang:Originally from ReblogRootTitle 2}</p>
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
@@ -341,10 +341,10 @@
 						<p>{Source}</p>
 					{/block:Source}
 					{block:ContentSource}
-						<p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
+						<p class="content-source">{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
-						<p>{lang:Originally from ReblogRootTitle 2}</p>
+						<p class="reblogged-from">{lang:Originally from ReblogRootTitle 2}</p>
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
@@ -379,10 +379,10 @@
 						{Description}
 					{/block:Description}
 					{block:ContentSource}
-						<p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
+						<p class="content-source">{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
-						<p>{lang:Originally from ReblogRootTitle 2}</p>
+						<p class="reblogged-from">{lang:Originally from ReblogRootTitle 2}</p>
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
@@ -424,10 +424,10 @@
 						{/block:Lines}
 					</ul>
 					{block:ContentSource}
-						<p>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
+						<p class="content-source">{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
 					{block:RebloggedFrom}
-						<p>{lang:Originally from ReblogRootTitle 2}</p>
+						<p class="reblogged-from">{lang:Originally from ReblogRootTitle 2}</p>
 					{/block:RebloggedFrom}
 					<footer>
 						<span class="time-ago">
@@ -509,7 +509,7 @@
 	<!-- any custom scripts go here -->
 	<script>
 		$(document).ready(function() {
-			// your functions go here
+			// your stuff here
 		});
 	</script>
 

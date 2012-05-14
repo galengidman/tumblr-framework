@@ -1,52 +1,42 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="en"> <!--<![endif]-->
-<!-- the "no-js" class is for Modernizr. -->
+<html>
 
 <head>
 	<meta charset="UTF-8">
-	
+
 	<!-- force latest IE rendering engin & Chrome Frame -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	
+
 	<!-- tumblog title and post title on permalink pages -->
 	<title>{Title}{block:PostTitle} // {PostTitle}{/block:PostTitle}</title>
-	
+
 	<!-- favicon & apple touch icon -->
 	<link rel="shortcut icon" href="{Favicon}">
 	<link rel="apple-touch-icon" href="{PortraitURL-128}">
-	
+
 	<!-- RSS link - make sure not to use /rss as it kills the ability for a user to use Feedburner -->
 	<link rel="alternate" type="application/rss+xml" href="{RSS}">
-	
-	<!-- insert the met -->
+
+	<!-- meta description -->
 	{block:Description}
 		<meta name="description" content="{MetaDescription}">
 	{/block:Description}
-	
+
 	<!-- theme options -->
 	<meta name="text:Disqus shortname" content="">
 	<meta name="text:Google Analytics ID" content="">
-	
+
 	<!-- styles -->
 	<style>
 		/* reset and normalize styles */
 		@import url('http://static.tumblr.com/vookvsa/QT0ly45ee/normalize.css');
-		
+
 		/* don't forget to let people mess up the theme with their own styles */
 		{CustomCSS}
 	</style>
-	
+
 	<!-- HTML5 enabling script -->
-	<!--[if lt IE 9]>
-		<script src="http://static.tumblr.com/vookvsa/elOly45v5/html5.js"></script>
-	<![endif]-->
-	
-	<!-- all the JS is at the bottom of the page except for Modernizr -->
-	<script src="http://static.tumblr.com/vookvsa/PRBly45fo/modernizr-1.7.min.js"></script>
+	<!--[if lt IE 9]><script src="http://static.tumblr.com/vookvsa/elOly45v5/html5.js"></script><![endif]-->
 </head>
 
 <body>
@@ -77,10 +67,10 @@
 		{/block:Description}
 
 	</header><!-- /header -->
-	
+
 	<div role="main">
 		{block:Posts}
-			
+
 			{block:Text}
 				<article id="post-{PostID}" class="post text {TagsAsClasses}">
 					{block:Title}
@@ -100,17 +90,17 @@
 							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link"> // 
+							<span class="comments-link"> //
 								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count"> // 
+							<span class="note-count"> //
 								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags"> // 
+							<span class="tags"> //
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -129,17 +119,17 @@
 							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link"> // 
+							<span class="comments-link"> //
 								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count"> // 
+							<span class="note-count"> //
 								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags"> // 
+							<span class="tags"> //
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -147,7 +137,7 @@
 					</footer>
 				</article>
 			{/block:Answer}
-			
+
 			{block:Photo}
 				<article id="post-{PostID}" class="post photo {TagsAsClasses}">
 					{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}">{LinkCloseTag}
@@ -184,17 +174,17 @@
 							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link"> // 
+							<span class="comments-link"> //
 								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count"> // 
+							<span class="note-count"> //
 								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags"> // 
+							<span class="tags"> //
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -202,7 +192,7 @@
 					</footer>
 				</article>
 			{/block:Photo}
-			
+
 			{block:Photoset}
 				<article id="post-{PostID}" class="post photoset {TagsAsClasses}">
 					{Photoset-500}
@@ -220,17 +210,17 @@
 							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link"> // 
+							<span class="comments-link"> //
 								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count"> // 
+							<span class="note-count"> //
 								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags"> // 
+							<span class="tags"> //
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -256,17 +246,17 @@
 							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link"> // 
+							<span class="comments-link"> //
 								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count"> // 
+							<span class="note-count"> //
 								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags"> // 
+							<span class="tags"> //
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -277,7 +267,12 @@
 
 			{block:Audio}
 				<article id="post-{PostID}" class="post audio {TagsAsClasses}">
-					{AudioPlayer}
+					{block:AudioEmbed}
+						<div class="embed">{AudioEmbed-500}</div>
+					{/block:AudioEmbed}
+					{block:AudioPlayer}
+						<div class="player">{AudioPlayer}</div>
+					{/block:AudioPlayer}
 					{block:Caption}
 						{Caption}
 					{/block:Caption}
@@ -309,17 +304,17 @@
 							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link"> // 
+							<span class="comments-link"> //
 								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count"> // 
+							<span class="note-count"> //
 								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags"> // 
+							<span class="tags"> //
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -345,17 +340,17 @@
 							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link"> // 
+							<span class="comments-link"> //
 								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count"> // 
+							<span class="note-count"> //
 								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags"> // 
+							<span class="tags"> //
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -363,7 +358,7 @@
 					</footer>
 				</article>
 			{/block:Quote}
-			
+
 			{block:Link}
 				<article id="post-{PostID}" class="post link {TagsAsClasses}">
 					<header>
@@ -383,17 +378,17 @@
 							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link"> // 
+							<span class="comments-link"> //
 								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count"> // 
+							<span class="note-count"> //
 								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags"> // 
+							<span class="tags"> //
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -401,7 +396,7 @@
 					</footer>
 				</article>
 			{/block:Link}
-			
+
 			{block:Chat}
 				<article id="post-{PostID}" class="post chat {TagsAsClasses}">
 					{block:Title}
@@ -428,17 +423,17 @@
 							<a href="{Permalink}">{TimeAgo}</a>
 						</span>
 						{block:IfDisqusShortname}
-							<span class="comments-link"> // 
+							<span class="comments-link"> //
 								<a href="{Permalink}#comments">{lang:Comment}</a>
 							</span>
 						{/block:IfDisqusShortname}
 						{block:NoteCount}
-							<span class="note-count"> // 
+							<span class="note-count"> //
 								<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 							</span>
 						{/block:NoteCount}
 						{block:HasTags}
-							<span class="tags"> // 
+							<span class="tags"> //
 								{lang:Tagged}
 								{block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags}
 							</span>
@@ -446,9 +441,9 @@
 					</footer>
 				</article>
 			{/block:Chat}
-					
+
 		{/block:Posts}
-		
+
 		{block:IfDisqusShortname}
 			{block:PermalinkPage}
 				<section id="comments">
@@ -475,7 +470,7 @@
 				</section>
 			{/block:PermalinkPage}
 		{/block:IfDisqusShortname}
-		
+
 		{block:PostNotes}
 			<section id="notes">{PostNotes}</section>
 		{/block:PostNotes}
@@ -490,16 +485,16 @@
 				<span>{lang:Page CurrentPage of TotalPages}</span>
 			</nav>
 		{/block:Pagination}
-			
+
 	</div><!-- /main -->
-	
+
 	<footer role="contentinfo">
 		Copyright {CopyrightYears} // {lang:Powered by Tumblr 2}
 	</footer><!-- /footer -->
-	
+
 	<!-- grab jQuery -->
 	<script src="http://static.tumblr.com/vookvsa/cJ1ly45i3/jquery-1.7.1.min.js"></script>
-	
+
 	<!-- any custom scripts go here -->
 	<script>
 		$(document).ready(function() {

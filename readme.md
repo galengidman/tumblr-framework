@@ -6,8 +6,6 @@ This is a framework to get your Tumblr themes started. It's not everything, but 
 
 - Support for all post types and most of their special tags
 - Semantic, HTML5 markup (with shiv for older browsers)
-- Modernizr
-- jQuery
 - Disqus comments
 - Google Analytics
 - Meets all the Tumblr Theme Garden qualifications
@@ -18,6 +16,7 @@ MIT dude.
 
 ## Themes built on Tumblr Framework
 
+- [Viewport](http://www.tumblr.com/theme/34935)
 - [asSimple](https://github.com/lain6/asSimple)
 - [Pinstripe](http://www.tumblr.com/theme/33911)
 - [Blueprint](http://www.tumblr.com/theme/33946)

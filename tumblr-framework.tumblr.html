@@ -206,7 +206,7 @@
 
 			{block:Photoset}
 				<article id="post-{PostID}" class="post photoset {TagsAsClasses}">
-					{Photoset-500}
+					<p>{Photoset-500}</p>
 					{block:Caption}
 						{Caption}
 					{/block:Caption}
@@ -242,7 +242,7 @@
 
 			{block:Video}
 				<article id="post-{PostID}" class="post video {TagsAsClasses}">
-					{Video-500}
+					<p>{Video-500}</p>
 					{block:Caption}
 						{Caption}
 					{/block:Caption}
@@ -279,10 +279,10 @@
 			{block:Audio}
 				<article id="post-{PostID}" class="post audio {TagsAsClasses}">
 					{block:AudioEmbed}
-						<div class="embed">{AudioEmbed-500}</div>
+						<p>{AudioEmbed-500}</div>
 					{/block:AudioEmbed}
 					{block:AudioPlayer}
-						<div class="player">{AudioPlayer}</div>
+						<p>{AudioPlayer}</div>
 					{/block:AudioPlayer}
 					{block:Caption}
 						{Caption}

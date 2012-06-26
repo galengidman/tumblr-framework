@@ -9,6 +9,7 @@ This is a framework to get your Tumblr themes started. It's not everything, but 
 - Disqus comments
 - Google Analytics
 - Meets all the Tumblr Theme Garden qualifications
+- Pre-included jQuery
 
 ## License
 
